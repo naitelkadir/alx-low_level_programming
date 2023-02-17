@@ -23,7 +23,7 @@ int main(void)
 			{
 				if (a < b)
 				{
-					puthcar('0' + c);
+					putchar('0' + c);
 					putchar('0' + a);
 					putchar('0' + b);
 					putchar(',');
