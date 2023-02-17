@@ -7,11 +7,11 @@
  *
  * Return: Always 0 (Success)
  */
-int main (void)
+int main(void)
 {
 	int n;
 	int a;
-	char str[]="Last digit of";
+	char str[]= "Last digit of";
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
