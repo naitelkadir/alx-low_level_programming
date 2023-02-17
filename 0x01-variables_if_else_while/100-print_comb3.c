@@ -11,6 +11,7 @@ int main(void)
 	int d;
 	int a;
 	int b;
+
 	for (d = 0; d < 90; d++)
 	{
 		a = d / 10;
