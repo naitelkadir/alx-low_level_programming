@@ -15,7 +15,7 @@ int main(void)
 	for (c = 0; c < 10; c++)
 	{
 		putchar('0' + c);
-		for (d = 0; d < 90; d++)
+		for (d = 12; d < 90; d++)
 		{
 			a = d / 10;
 			b = d % 10;
