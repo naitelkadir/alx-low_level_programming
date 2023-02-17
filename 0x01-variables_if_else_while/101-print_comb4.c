@@ -12,9 +12,9 @@ int main(void)
 	int a;
 	int b;
 	int c;
+	
 	for (c = 0; c < 10; c++)
 	{
-		putchar('0' + c);
 		for (d = 12; d < 90; d++)
 		{
 			a = d / 10;
@@ -23,6 +23,7 @@ int main(void)
 			{
 				if (a < b)
 				{
+					puthcar('0' + c);
 					putchar('0' + a);
 					putchar('0' + b);
 					putchar(',');
@@ -31,8 +32,9 @@ int main(void)
 			}
 			else
 			{
+				putchar('0' + c);
 				putchar('0' + a);
-				printf("%d\n", b);
+				printf("%d", b);
 			}
 		}
 	}
