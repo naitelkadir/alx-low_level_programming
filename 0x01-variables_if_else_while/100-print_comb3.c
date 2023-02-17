@@ -11,12 +11,10 @@ int main(void)
 	int d;
 	int a;
 	int b;
-	
 	for (d = 0; d < 90; d++)
 	{
 		a = d / 10;
 		b = d % 10;
-		
 		if (d != 89)
 		{
 			if (a < b)
@@ -30,7 +28,7 @@ int main(void)
 		else
 		{
 			putchar('0' + a);
-			printf("%d", b);
+			printf("%d\n", b);
 		}
 	}
 	return (0);
