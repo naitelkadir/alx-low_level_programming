@@ -29,7 +29,8 @@ int main(void)
 		}
 		else
 		{
-			putchar('0' + 89);
+			putchar('0' + a);
+			printf("%d", b);
 		}
 	}
 	return (0);
