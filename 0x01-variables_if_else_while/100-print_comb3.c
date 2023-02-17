@@ -9,20 +9,28 @@
 int main(void)
 {
 	int d;
-
+	int a;
+	int b;
+	
 	for (d = 0; d < 90; d++)
 	{
-		for ()
-		{
-			putchar((d / 10) + '0');
-			putchar((d % 10) + '0');
-		}
+		a = d / 10;
+		b = d % 10;
+		
 		if (d != 89)
 		{
-			putchar(',');
-			putchar(' ');
+			if (a < b)
+			{
+				putchar('0' + a);
+				putchar('0' + b);
+				putchar(',');
+				putchar(' ');
+			}
+		}
+		else
+		{
+			putchar('0' + 89);
 		}
 	}
-	putchar('\n');
 	return (0);
 }
