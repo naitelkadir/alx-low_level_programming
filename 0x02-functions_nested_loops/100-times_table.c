@@ -1,40 +1,47 @@
 #include "main.h"
 
 /**
- * print_times - a function that prints n+1 time table for number n
+ * print_times_table - a function that prints n+1 time table for number n
  * @n: integer input
  */
 
 void print_times_table(int n)
 {
-	int a, b, c;
-	if (n <= 15 && n >= 0)
+	int x, y, z;
+
+	if (n >= 0 && n <= 14)
 	{
-		for (a = 0; a <= n; a++)
+		for (x = 0; x <= n; x++)
 		{
-			_putchar('0');
-			_putchar(',');
-			_putchar(' ');
-			for (b = 1; b <= n; b++)
+			for (y = 0; y <= n; y++)
 			{
-				c = a * b;
-				if ((c / 10) > 0)
+				z = x * y;
+				if (z > 99)
 				{
-					_putchar('0' + c / 10);
+					_putchar(',');
+					_putchar(32);
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else if (z > 9)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
 				}
 				else
 				{
-					_putchar(' ');
-				}
-
-				_putchar('0' + (c % 10));
-
-				if (b < n)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
+					if (y != 0)
+					{
+						_putchar(',');
+						_putchar(32);
+						_putchar(32);
+						_putchar(32);
+					}
+					_putchar(z + '0');
 				}
 			}
 			_putchar('\n');
