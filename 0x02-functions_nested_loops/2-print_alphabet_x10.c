@@ -9,7 +9,8 @@
 void print_alphabet_x10(void)
 {
 	int c;
-	char ch;	
+	char ch;
+
 	c = 0;
 	while (c < 10)
 	{
@@ -21,4 +22,3 @@ void print_alphabet_x10(void)
 		c = c + 1;
 	}
 }
-
