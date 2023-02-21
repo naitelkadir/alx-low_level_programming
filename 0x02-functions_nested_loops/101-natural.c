@@ -15,8 +15,8 @@ int main(void)
 	{
 		if ((i % 3 == 0) || (i % 5 == 0))
 		{
-				s = s + i;
-		}	
+			s = s + i;
+		}
 	}
 	printf("%d\n", s);
 	return (0);
