@@ -12,7 +12,7 @@ int main(void)
 	int a = 0;
 	long b = 1, c = 2;
 
-	while (i < 50)
+	while (a < 50)
 	{
 		if (a == 0)
 		{
