@@ -2,7 +2,7 @@
 
 /**
  * _isalpha - a function that checks if a caracter is an alphabet
- * @c a single letter input
+ * @c : a single letter input
  * Return: 1 if int c is an alphabet, 0 if otherwise
  */
 
