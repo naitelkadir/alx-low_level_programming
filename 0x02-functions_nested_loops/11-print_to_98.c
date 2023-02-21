@@ -4,9 +4,6 @@
  * print_to_98 - a function that prints numbers from n to 98 
  * @n: integer input
  */
-
-
-
 void print_to_98(int n)
 {
 	if (n < 98)
