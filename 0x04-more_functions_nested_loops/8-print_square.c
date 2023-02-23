@@ -5,25 +5,24 @@
  * @size: size of square
  * Description: Can only use _putchar to print. Use '#' to print square.
  */
-	
 void print_square(int size)
 {
-	int a, b;
+	int x, y;
 
-	b = 0;
+	y = 0;
+
 	if (size < 1)
-	{
 		_putchar('\n');
-	}
-	while (b < size)
+
+	while (y < size)
 	{
-		a = 0;
-		while (a < size)
+		x = 0;
+		while (x < size)
 		{
 			_putchar('#');
-			a++;
+			x++;
 		}
 		_putchar('\n');
-		b++;
+		y++;
 	}
 }
