@@ -6,10 +6,10 @@
  */
 void more_numbers(void)
 {
-	int c, i;
+	int count, i;
 
 	count = 0;
-	while (c < 10)
+	while (count < 10)
 	{
 		i = 0;
 		while (i < 15)
