@@ -16,7 +16,7 @@ void puts_half(char *str)
 		c++;
 	}
 	n = c / 2;
-	if (c % 2 == 1)
+	if ((c % 2) == 1)
 	{
 		n = (c + 1) / 2;
 	}
@@ -24,4 +24,5 @@ void puts_half(char *str)
 	{
 		_putchar(str[i]);
 	}
+	_putchar('\n');
 }
