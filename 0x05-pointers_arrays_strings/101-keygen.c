@@ -12,9 +12,9 @@ int main(void)
 	for (c = 0, total = 2772; total > 122; c++)
 	{
 		myrando = (rand() % 125) + 1;
-		printf("%d", myrando);
+		printf("%c", myrando);
 		total -= myrando;
 	}
-	printf("%d", total);
+	printf("%c", total);
 	return (0);
 }
