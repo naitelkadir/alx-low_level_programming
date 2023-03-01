@@ -1,7 +1,5 @@
 #include "main.h"
 
-#include "main.h"
-
 /**
  * _strncpy - Entry point
  * @dest: copy to
