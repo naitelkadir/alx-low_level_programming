@@ -15,17 +15,13 @@ char *cap_string(char *n)
 	while (n[a])
 	{
 		i = 0;
-
 		while (i < cspc)
 		{
 			if ((a == 0 || n[a - 1] == spc[i]) && (n[a] >= 97 && n[a] <= 122))
 				n[a] -= 32;
-
 			i++;
 		}
-
 		a++;
 	}
-
 	return (n);
 }
