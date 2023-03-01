@@ -18,7 +18,7 @@ char *leet(char *n)
 			if (n[i] == elite[j])
 			{
 				n[i] = every[j / 2];
-				x = 9;
+				j = 9;
 			}
 		}
 	}
