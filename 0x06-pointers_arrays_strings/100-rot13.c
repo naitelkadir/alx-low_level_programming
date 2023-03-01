@@ -6,23 +6,19 @@
  * @n: input
  * Return: decrypted string
  */
-char *rot13(char *n)
+char *rot13(char *s)
 {
-	int x, rot_c = 13, i = 0;
-	char toswap[] = {'A', 'N', 'a', 'n', 'B', 'O', 'b', 'o', 'C', 'P','c', 'p', 'D', 'Q', 'd', 'q', 'E', 'R', 'e', 'r', 'F', 'S', 'f','s', 'G', 'T', 'g', 't', 'H', 'U', 'h', 'u', 'I', 'V', 'i', 'v','J', 'W', 'j', 'w', 'K', 'X', 'k', 'x', 'L', 'Y', 'l', 'y', 'M','Z', 'm', 'z'};
+	int i;
+	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+	char storel[] = "nopqrstuvwxyzabcdefghijklm";
 
-	while (n[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (x = 0; x <= 51; x++)
+		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
 		{
-			if (n[i] == toswap[x])
-			{
-				n[i] = n[i] + rot_c;
-				x = 51;
-			}
-			rot_c = rot_c * -1;
+			s[i] = (s[i] - 65 > 25) ?
+				storel[s[i] - 97] : storeh[s[i] - 65];
 		}
-		i++;
 	}
-	return (n);
+	return (s);
 }
