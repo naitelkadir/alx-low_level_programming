@@ -2,7 +2,6 @@
 
 /**
  * rot13 - Entry point
- * ONE if, TWO loops only...
  * @n: input
  * Return: decrypted string
  */
