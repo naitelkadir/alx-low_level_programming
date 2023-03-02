@@ -12,31 +12,66 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = strlen(n1);
-    	int len2 = strlen(n2);
-    	int carry = 0;
-    	int i = len1 - 1;
-    	int j = len2 - 1;
-    	int k = size_r - 1;
-    	r[k] = '\0';
-
-    	while (i >= 0 || j >= 0 || carry > 0)
-	{
-        int digit1 = i >= 0 ? n1[i] - '0' : 0;
-        int digit2 = j >= 0 ? n2[j] - '0' : 0;
-        int sum = digit1 + digit2 + carry;
-
-        if (k <= 0)
-	{
-            return 0;
-        }
-
-        carry = sum / 10;
-        int digit = sum % 10;
-        r[--k] = digit + '0';
-        i--;
-        j--;
+	int i, c, sum, len1, len2;
+    char *tmp;
+    int rev1, rev2, revr;
+    c = 0;
+    
+    for (i = 0; n1[i] =! '\0'; i++)
+    {
+        len1++;
     }
+    for (i =0; n2[i] != '\0'; j++)
+    {
+        len2++;
+    }
+    for (i = 0; i < len1 / 2; i++)
+    {
+        rev1 = n1[i];
+        n1[i] = n1[len1 - 1 - i];
+        n1[len1 - 1 - i] = rev1;
+    }
+    for (i = 0; i < len2 / 2; i++)
+    {
+        rev2 = n2[i];
+        n2[i] = n2[len1 - 1 - i];
+        n2[len1 - 1 - i] = rev2;
+    }
+    
+    if (len2 > len1)
+    {
+        
+        strcpy(tmp, n1);
+        strcpy(n1, n2);
+        strcpy(n2, tmp);
+    }
+    if ((len1 > size_r) || (len1 == size_r && (n1[0] + n2[0]) >= 10))
+    {
+        r = '\0';
+    }
+    
+    for (i = 0; i < len2; i++)
+    {
+        sum = (n1[i] - '0') + (n2[i] - '0') + c;
+        r[i] = sum % 10 + '0';
+        c = sum / 10;
+    }
+    for (i = len2; i < len1; i++)
+    {
+        sum = (n1[i] -'0') + c;
+        r[i] = sum %10 + '0';
+        c = sum /10;
+    }
+    if (c)
+    {
+        r[len1] = c;
 
-    return &r[k];
+    }
+    for (i = 0; i < size_r / 2; i++)
+    {
+        revr = r[i];
+        r[i] = r[size_r - 1 - i];
+        r[size_r - 1 - i] = revr;
+    }
+    return (r);
 }
