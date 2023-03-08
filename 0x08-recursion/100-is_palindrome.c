@@ -1,6 +1,7 @@
 #include "main.h"
 
-int check(char *s);
+int isPalRec(char *s,int i, int e);
+int _strlen_recursion(char *s);
 
 /**
   * is_palindrome - Returns if a string is palindrome
@@ -10,32 +11,29 @@ int check(char *s);
   */
 int is_palindrome(char *s)
 {
-	if (*s == '0')
+	int n = _strlen_recursion(s);
+     
+	if (n == 0)
 		return (1);
-
-	return (check(s));
+     	return isPalRec(s, 0, n - 1);
 }
 
 /**
-  * check - Check if a string is palindrome
+  * isPalRec - Check if a string is palindrome
   * @s: the string value to be checked
-  *
+  * @i: first index
+  * @e: second index
   * Return: integer value
   */
-int check(char *s)
+
+int isPalRec(char *s,int i, int e)
 {
-	int h = _strlen_recursion(s) - 1;
-
-	if (*s == s[h])
-	{
-		s++;
-		h--;
-	}
-	else
-	{
+	if (i == e)
+		return (1);
+	if (s[i] != s[e])
 		return (0);
-	}
-
+	if (i < e + 1)
+		return isPalRec(s, i + 1, e - 1);
 	return (1);
 }
 
@@ -51,7 +49,6 @@ int _strlen_recursion(char *s)
 	{
 		return (0);
 	}
-
 	s++;
 	return (_strlen_recursion(s) + 1);
 }
