@@ -26,7 +26,7 @@ int check(char *s)
 {
 	int h = _strlen_recursion(s) - 1;
 
-	if (*s == s[l])
+	if (*s == s[h])
 	{
 		s++;
 		h--;
