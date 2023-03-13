@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 	empt = "";
 	if (s1 == NULL)
 	{
-		s1 == empt;
+		s1 = empt;
 	}
 	if (s2 == NULL)
 	{
