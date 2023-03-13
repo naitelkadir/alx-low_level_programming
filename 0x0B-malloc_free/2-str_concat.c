@@ -11,11 +11,20 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *str;
+	char *str, *empt;
 	int i, j, a, b;
 	
 	a = 0;
 	b = 0;
+	empt = "";
+	if (s1 == NULL)
+	{
+		s1 == empt;
+	}
+	if (s2 == NULL)
+	{
+		s2 = empt;
+	}
 	while (s1[a] != '\0')
 	{
 		a++;
@@ -40,3 +49,4 @@ char *str_concat(char *s1, char *s2)
 	str[a + b] = '\0';
 	return (str);
 }
+
