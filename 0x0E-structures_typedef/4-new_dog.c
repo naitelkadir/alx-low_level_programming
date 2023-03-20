@@ -1,58 +1,80 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "dog.h"
+
 /**
- * new_dog - a function that creates a new dog
- * get len of name + owner, malloc them, cpy name + owner to new
- * @name: name
- * @age: age
- * @owner: owner
- * Return: 0
+ * _strlen - return length of a string
+ *
+ * @s: char type
+ * Return:  length of string
  */
+
+int _strlen(char *s)
+{
+	int a;
+
+	for (a = 0; s[a] != '\0'; a++)
+	{
+
+	}
+	return (a);
+}
+/**
+ * _strcpy - function to copy string from source to destination
+ *@dest: pointer to destinatioin of string to be copied
+ *@src: pointer to source of string to be copied
+ * Return: return the value at dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int a;
+
+	for (a = 0; src[a] != '\0'; a++)
+	{
+		dest[a] = src[a];
+	}
+	dest[a] = '\0';
+	return (dest);
+}
+/**
+ * *new_dog - function to create new dog struct
+ * @name: char type
+ * @age: float type
+ * @owner: char type
+ * Return: Always success
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_name;
-	char *cpy_name, *cpy_owner;
-	unsigned int i, name_len = 0, owner_len = 0;
-	
-	new_name = malloc(sizeof(dog_t));
-	if (new_name == NULL)
+	dog_t *newd;
+
+	newd = malloc(sizeof(struct dog));
+	if (newd == NULL)
+		return (NULL);
+
+	if (name == NULL)
 	{
+		free(newd);
 		return (NULL);
 	}
-	if (name == NULL || age <= 0 || owner == NULL)
+	newd->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (newd->name == NULL)
+		return (NULL);
+	_strcpy(newd->name, name);
+
+	newd->age = age;
+
+	if (owner == NULL)
 	{
-		free(new_name);
+		free(newd->owner);
+		free(newd);
 		return (NULL);
 	}
-	for (i = 0; name[i] != '\0'; i++)
-	{
-		name_len++;
-	}
-	for (i = 0; owner[i] != '\0'; i++)
-	{
-		owner_len++;
-	}
-	cpy_name = malloc(sizeof(char) * (name_len + 1));
-	if (cpy_name == NULL)
-	{
+	newd->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (newd->owner == NULL)
 		return (NULL);
-	}
-	cpy_owner = malloc(sizeof(char) * (owner_len + 1));
-	if (cpy_owner == NULL)
-	{
-		return (NULL);
-	}
-	for (i = 0; i <= name_len; i++)
-	{
-		cpy_name[i] = name[i] ;
-	}
-	for (i = 0; i <= owner_len; i++)
-	{
-		cpy_owner[i] = owner[i];
-	}
-	new_name->name = cpy_name;
-	new_name->owner = cpy_owner;
-	new_name->age = age;
-	return (new_name);
+	_strcpy(newd->owner, owner);
+
+	return (newd);
 }
