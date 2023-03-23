@@ -5,7 +5,7 @@
 /**
  *sum-them-all: function that returns sum o all parameters
  *@n: the number of all parameters
- *return the sum of all parameters
+ *Return:sum of all parameters
  */
 int sum_them_all(const unsigned int n, ...)
 {
