@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include "variadic_functions.h"
 /**
  * print_numbers - Entry Point
@@ -22,7 +22,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d", va_arg(ap, const unsigned int));
 		if(i != n - 1)
 		{
-			printf("%s", separator));
+			printf("%s", separator);
 		}
 	}
 	printf("\n");
