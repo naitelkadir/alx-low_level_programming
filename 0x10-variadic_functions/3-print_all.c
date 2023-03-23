@@ -36,6 +36,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 'f':
 			printf("%f%s", va_arg(ap, double), sep);
+			break;
 		case 's':
 			str = va_arg(ap, char*);
 			if (str == NULL)
@@ -48,4 +49,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
+	va_end(ap);
 }
