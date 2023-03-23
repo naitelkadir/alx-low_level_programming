@@ -3,8 +3,8 @@
 #include "variadic_functions.h"
 /**
  * print_numbers - Entry Point
+ * @separator: comma space
  * @n: numbers of parameters
- * @separator: sepertor between elements
  * Return: void
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
