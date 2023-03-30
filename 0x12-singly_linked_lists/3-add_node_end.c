@@ -36,7 +36,7 @@ tmp = tmp->next;
 }
 tmp->next = newNode;
 newNode->next = NULL;
-return(tmp);
+return (tmp);
 }
 return (NULL);
 }
