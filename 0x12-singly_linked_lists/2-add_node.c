@@ -20,7 +20,7 @@ newNode->str = strdup(str);
 newNode->len = _strlen(str);
 newNode->next = *head;
 *head = newNode;
-return (*head);
+return (newNode);
 }
 /**
  *_strlen - returns the length if a string
