@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -44,7 +45,7 @@ return(tmp);
 int _strlen(const char *s)
 {
 int c = 0;
-while (s[c] != NULL)
+while (s[c] != '\0')
 {
 c++;
 }
