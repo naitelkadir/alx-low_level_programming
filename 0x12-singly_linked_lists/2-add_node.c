@@ -22,7 +22,6 @@ newNode->next = *head;
 *head = newNode;
 return (*head);
 }
-
 /**
  *_strlen - returns the length if a string
  *@s: string to count
