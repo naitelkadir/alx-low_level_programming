@@ -35,11 +35,10 @@ while (tmp->next != NULL)
 tmp = tmp->next;
 }
 tmp->next = newNode;
-return (tmp);
+return(tmp);
 }
 return (NULL);
 }
-
 /**
   * _strlen - Returns the length of a string
   * @s: String to count
@@ -49,9 +48,8 @@ return (NULL);
 int _strlen(const char *s)
 {
 int c = 0;
-while (*s)
+while (s[c] != '\0')
 {
-s++;
 c++;
 }
 return (c);
