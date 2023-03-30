@@ -14,6 +14,8 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 list_t *newNode;
 list_t *tmp;
+if (str != NULL)
+{
 newNode = malloc(sizeof(list_t));
 if (newNode == NULL)
 {
@@ -35,6 +37,8 @@ tmp = tmp->next;
 tmp->next = newNode;
 newNode->next = NULL;
 return(tmp);
+}
+return (NULL);
 }
 /**
  *_strlen - returns the length if a string
