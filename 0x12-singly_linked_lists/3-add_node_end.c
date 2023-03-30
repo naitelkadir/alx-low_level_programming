@@ -23,10 +23,10 @@ return (NULL);
 }
 newNode->str = strdup(str);
 newNode->len = _strlen(str);
+newNode->next = NULL;
 if (*head == NULL)
 {
 *head = newNode;
-newNode->next = NULL;
 return (*head);
 }
 tmp = *head;
@@ -35,7 +35,6 @@ while (tmp->next != NULL)
 tmp = tmp->next;
 }
 tmp->next = newNode;
-newNode->next = NULL;
 return (tmp);
 }
 return (NULL);
