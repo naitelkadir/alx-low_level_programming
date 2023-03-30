@@ -8,20 +8,27 @@
   * @str: The string to add to the node
   *
   * Return: The address of the new list or NULL if it failed
-  */	
+  */
 list_t *add_node(list_t **head, const char *str)
 {
-list_t *newNode;
-newNode = malloc(sizeof(list_t));
-if (newNode == NULL)
-{
-return (NULL);
-}
-newNode->str = strdup(str);
-newNode->len = _strlen(str);
-newNode->next = *head;
-*head = newNode;
-return (newNode);
+	list_t *temp;
+
+	if (head != NULL && str != NULL)
+	{
+		temp = malloc(sizeof(list_t));
+		if (temp == NULL)
+			return (NULL);
+
+		temp->str = strdup(str);
+		temp->len = _strlen(str);
+		temp->next = *head;
+
+		*head = temp;
+
+		return (temp);
+	}
+
+	return (0);
 }
 
 /**
@@ -32,10 +39,13 @@ return (newNode);
   */
 int _strlen(const char *s)
 {
-int c = 0;
-while (s[c] != '\0')
-{
-c++;
-}
-return (c);
+	int c = 0;
+
+	while (*s)
+	{
+		s++;
+		c++;
+	}
+
+	return (c);
 }
