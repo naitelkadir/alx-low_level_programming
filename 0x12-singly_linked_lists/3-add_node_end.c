@@ -4,9 +4,9 @@
 #include "lists.h"
 
 /**
- *add_node_end - adds node at the end of a list
- *@head: the original linked list
- *@str: the string to add to the node
+ *add_node_end - Adds node at the end of a list
+ *@head: The original linked list
+ *@str: The string to add to the node
  *
  *Return: The adress of new list or NULL if it failed
  */	
@@ -41,10 +41,10 @@ return(tmp);
 return (NULL);
 }
 /**
- *_strlen - returns the length if a string
- *@s: string to count
+ *_strlen - Returns the length if a string
+ *@s: The string to count
  *
- *Return: string length
+ *Return: String length
  */
 int _strlen(const char *s)
 {
