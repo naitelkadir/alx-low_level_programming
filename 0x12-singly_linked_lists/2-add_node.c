@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -20,9 +19,25 @@ if (newNode == NULL)
 return (NULL);
 }
 newNode->str = strdup(str);
-newNode->len = strlen(str);
+newNode->len = _strlen(str);
 newNode->next = *head;
 *head = newNode;
 return (newNode);
 }
+}
+
+/**
+ *_strlen - returns the length if a string
+ *@s: string to count
+ *
+ *Return: string length
+ */
+int _strlen(const char *s)
+{
+int c = 0;
+while (s[c] != NULL)
+{
+c++;
+}
+return (c);
 }
