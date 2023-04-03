@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
@@ -9,6 +8,7 @@
  *
  * Return: the adress of the new element or NULL if it failed
  */
+
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 listint_t *newnode;
@@ -27,7 +27,7 @@ if (*head == NULL)
 *head = newnode;
 return (*head);
 }
-tmp = *head;
+tmp = *head->next;
 while (tmp != NULL)
 {
 tmp = tmp->next;
