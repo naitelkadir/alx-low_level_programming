@@ -29,7 +29,7 @@ if (*head == NULL)
 return (*head);
 }
 tmp = *head;
-while (tmp != NULL)
+while (tmp->next != NULL)
 {
 tmp = tmp->next;
 }
