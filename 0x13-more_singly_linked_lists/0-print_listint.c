@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * print_listint - Prints all elements of a liked list
@@ -6,9 +7,10 @@
  *
  * Return : The number of nodes
  */
+
 size_t print_listint(const listint_t *h)
 {
-	int c = 0;
+	size_t c = 0;
 	if (h != NULL)
 	{	
 		while (h != NULL)
