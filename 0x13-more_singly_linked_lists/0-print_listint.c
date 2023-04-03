@@ -1,5 +1,5 @@
-#include "lists.h"
 #include <stdio.h>
+#include "lists.h"
 
 /**
  * print_listint - Prints all elements of a liked list
@@ -16,8 +16,8 @@ size_t print_listint(const listint_t *h)
 		while (h != NULL)
 		{
 			printf("%d\n", h->n);
-			c++;
 			h = h->next;
+			c++;
 		}
 	}
 	return (c);
