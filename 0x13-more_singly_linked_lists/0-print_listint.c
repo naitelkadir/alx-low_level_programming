@@ -2,9 +2,9 @@
 #include "lists.h"
 
 /**
- * print_listint - Prints all elements of a liked list
- * @h: Linked list
- * Return : The number of nodes
+ * print_listint - ...
+ * @h: ...
+ * Return: ...
  */
 size_t print_listint(const listint_t *h)
 {
