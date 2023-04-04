@@ -1,14 +1,12 @@
 #include <stdlib.h>
 #include "lists.h"
 
-/*
- * add_nodeint-end - ...
- * @head: ...
- * @n: ...
- *
- * Return: ...
+/**
+ * *add_nodeint-end - Adds a new nde at the end of a linked list
+ * @head: listint_t type of node struct pointer to head
+ * @n: const int type
+ * Return: Always successful
  */
-
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 listint_t *newnode;
