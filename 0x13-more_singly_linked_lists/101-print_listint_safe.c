@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -13,7 +12,7 @@ size_t printf_listint_safe(const listint_t *head)
 	listint_t *tmp;
 	size_t c = 0;
 	tmp = head;
-	while (tmp !=NULL)
+	while (tmp != NULL)
 	{
 		c++;
 		printf("[%p] %d\n",(void *)tmp, tmp->n);
