@@ -2,11 +2,11 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - A function that returns the nth node of a linked list or NULL if the index does not exist
- * @head: linked list
- * @index: The index of the node
+ * get_nodeint_at_index - ...
+ * @head: ...
+ * @index: ...
  *
- * Return: The adress of the nth node
+ * Return: ...
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
