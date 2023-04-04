@@ -2,11 +2,11 @@
 #include "lists.h"
 
 /*
- * add_nodeint-end - Adds a new nde at the end of a linked list 
- * @head: A pointer to the first element in a linked list
- * @n: The value to add to the new node
+ * add_nodeint-end - ...
+ * @head: ...
+ * @n: ...
  *
- * Return: the adress of the new element or NULL if it failed
+ * Return: ...
  */
 
 listint_t *add_nodeint_end(listint_t **head, const int n)

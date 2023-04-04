@@ -3,10 +3,10 @@
 #include "lists.h"
 
 /*
- * free_listint - A function that frees a linked list
- * @head: The pointer to the fisrt element in the linked list
+ * free_listint - ...
+ * @head: ...
  *
- * Return: void
+ * Return: ...
  */
 void free_listint(listint_t *head)
 {
