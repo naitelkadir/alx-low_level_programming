@@ -3,8 +3,8 @@
 #include "lists.h"
 
 /*
- * free_listint2 - A function that frees a linked list and sets head to NULL
- * @head: The pointer to the fisrt element in the linked list
+ * free_listint2 - ...
+ * @head: ...
  *
  * Return: void
  */
