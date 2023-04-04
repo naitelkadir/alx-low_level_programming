@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -15,14 +16,14 @@ size_t print_listint_safe(const listint_t *head)
 	while (tmp != NULL)
 	{
 		c++;
-		printf("[%p] %d\n", tmp, tmp->n);
+		printf("[%p] %d\n", (void *)tmp, tmp->n);
 		if (tmp < tmp->next)
 		{
 			tmp = tmp->next;
 		}
 		else
 		{
-			printf("-> [%p] %d\n", tmp->next, tmp->next->n);
+			printf("-> [%p] %d\n", (void *)tmp->next, tmp->next->n);
 			exit(98);
 		}
 	}
