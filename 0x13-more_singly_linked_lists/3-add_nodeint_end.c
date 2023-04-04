@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * *add_nodeint-end - Adds a new nde at the end of a linked list
+ * add_nodeint_end - Adds a new nde at the end of a linked list
  * @head: listint_t type of node struct pointer to head
  * @n: const int type
  * Return: Always successful
