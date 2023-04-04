@@ -5,8 +5,7 @@
 /*
  * free_listint - ...
  * @head: ...
- *
- * Return: ...
+ * Return: void
  */
 void free_listint(listint_t *head)
 {
