@@ -7,9 +7,9 @@
  *
  * Return: The number of nodes in the list
  */
-size_t printf_listint_safe(const listint_t *head)
+size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *tmp;
+	const listint_t *tmp;
 	size_t c = 0;
 	tmp = head;
 	while (tmp != NULL)
