@@ -33,7 +33,7 @@ if (head != NULL)
 	else
 	{
 		tmp = *head;
-		for (i = 1; i < idx - 1; i++)
+		for (i = 1; i < idx; i++)
 		{
 			if (tmp == NULL)
 			{
