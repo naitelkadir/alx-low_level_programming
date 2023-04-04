@@ -33,9 +33,12 @@ if (head != NULL)
 	else
 	{
 		tmp = *head;
-		for (i = 0; i < idx; i++)
+		for (i = 1; i < idx; i++)
 		{
-
+			if (tmp == NULL)
+			{
+				return (NULL);
+			}
 			tmp = tmp->next;
 		}
 		newnode->next = tmp->next;
