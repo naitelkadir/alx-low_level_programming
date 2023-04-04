@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.s"
 
 /**
@@ -20,6 +21,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	if (index == 0)
 	{
 		*head = newnode->next;
+		free(newnode);
 		return (-1);
 	}
 	tmp = *head;
@@ -28,6 +30,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		if (c == index)
 		{
 			tmp->next = tmp->next->next;
+			free(tmp->next);
 			return (1);
 		}
 		tmp = tmp->next;
