@@ -24,27 +24,24 @@ if (head != NULL)
 		return (NULL);
 	}
 	newnode->n = n;
-	if (idx > 0)
+	if (idx <= 0)
+	{
+		newnode->next = *head;
+                *head = newnode;
+		return (*head);
+	}
+	else
 	{
 		tmp = *head;
 		for (i = 0; i < idx; i++)
 		{
-			if (tmp == NULL)
-			{
-				return (NULL);
-			}
+
 			tmp = tmp->next;
 		}
 		newnode->next = tmp->next;
 		tmp->next = newnode;
 		return (tmp);
 	}
-	else
-	{
-		newnode->next = *head;
-		*head = newnode;
-	}
-	return (newnode);
 }
 return (NULL);
 }
