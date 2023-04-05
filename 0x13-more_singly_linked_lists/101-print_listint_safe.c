@@ -12,8 +12,8 @@ size_t printf_listint_safe(const listint_t *head)
 {
 	const listint_t *tmp;
 	size_t c = 0;
-	tmp = head;
-	while (tmp !=NULL)
+	
+	while (head !=NULL)
 	{
 		printf("[%p] %d\n",(void *)tmp, tmp->n);
 		c++;
