@@ -28,6 +28,6 @@ size_t free_listint_safe(listint_t **h)
 		}
 		curr = next;
 	}
-	*h = NULL;
+	h = 0;
 	return (c);
 }
