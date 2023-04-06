@@ -22,7 +22,7 @@ size_t free_listint_safe(listint_t **h)
 		c++;
 		next = curr->next;
 		free(curr);
-		if (next <= curr)
+		if (next >= curr)
 		{
 			return (c);
 		}
