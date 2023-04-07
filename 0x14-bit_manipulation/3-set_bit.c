@@ -9,14 +9,14 @@
  *
  * Return: ...
  */
-int set_bit (unsigned long int *n, unsigned int index)
+int set_bit(unsigned long int *n, unsigned int index)
 {
 	if (index > sizeof(unsigned long int) * 8)
 	{
 		return (-1);
 	}
-	int clearbit = ~(1<<index);
+	int clearbit = ~(1 << index);
 	int mask = *n & clearbit;
-	*n = mask |(1<<index);
+	*n = mask |(1 << index);
 	return (1);
 }
