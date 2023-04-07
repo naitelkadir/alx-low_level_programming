@@ -28,7 +28,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		decimal = decimal + (b[i] - '0') * pow(2, len - 1 - i);
+		decimal = decimal + 1 << i;
 	}
 	return (decimal);
 }
