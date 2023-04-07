@@ -28,7 +28,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		if (b[len - i] == 49)
+		if (b[len - 1 - i] == 49)
 		{
 			decimal = decimal + 1 << i;
 		}
