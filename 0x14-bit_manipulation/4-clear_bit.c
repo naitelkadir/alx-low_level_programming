@@ -17,9 +17,9 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	}
 	else
 	{
-		int clearbit = ~(1<<index);
+		int clearbit = ~(1 << index);
 		int mask = *n & clearbit;
-		*n = mask |(0<<index);
+		*n = mask | (0 << index);
 		return (1);
 	}
 }
