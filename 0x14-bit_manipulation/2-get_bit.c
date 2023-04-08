@@ -18,13 +18,13 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		if (index == len)
 		{
-			if (n % 2 == 1)
+			if (n % 2 == 0)
 			{
-				return (0);
+				return (1);
 			}
 			else
 			{
-				return (1);
+				return (0);
 			}
 		}
 		n = n / 2;
