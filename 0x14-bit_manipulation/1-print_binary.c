@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -9,39 +10,17 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int bin = 0;
-	unsigned long int i = 1;
-	unsigned long int rem;
-	
-	while (n != 0)
+	if (n < 1)
 	{
-		rem = n % 2;
-		n = n / 2;
-		bin = bin + rem * i;
-		i = i * 10;
+		return;
 	}
-	convert(bin);
-}
-
-/**
- * convert - ...
- * @bin: ...
- *
- * Return: void
- */
-void convert(unsigned long int bin)
-{
-	unsigned long int d, r;
-	
-	if (bin < 10)
+	print_binary(n >> 1);
+	if (n & 1)
 	{
-		_putchar(bin + '0');
+		_putchar('1');
 	}
 	else
 	{
-		d = bin / 10;
-		r = bin % 10;
-		convert(d);
-		_putchar(r + '0');
+		_putchar('0');
 	}
-}
+
