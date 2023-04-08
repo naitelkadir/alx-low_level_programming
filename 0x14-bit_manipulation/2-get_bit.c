@@ -30,8 +30,8 @@ int get_bit(unsigned long int n, unsigned int index)
 		n = n / 2;
 		len++;
 	}
-	if (index > len )
+	if (index > sizeof(n) * 8)
 	{
-		return (0);
+		return (-1);
 	}
 }
