@@ -19,7 +19,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	{
 		int clearbit = ~(1 << index);
 		int mask = *n & clearbit;
-		*n = mask |(1 << index);
+		*n = mask | (1 << index);
 		return (1);
 	}
 }
