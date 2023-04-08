@@ -11,7 +11,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int len = 0;
-	unsigned int i;
+	unsigned int i = 0;
 	unsigned int decimal = 0;
 	
 	if (b == NULL)
@@ -22,16 +22,17 @@ unsigned int binary_to_uint(const char *b)
 	{
 		len++;
 	}
-	for (i = 0; i < len; i++)
+	while (len--)
 	{
-		if (b[i] != 48 && b[i] != 49)
+		if (b[i] != '0' && b[i] != '1')
 		{
 			return (0);
 		}
-		if (b[len - 1 - i] == 49)
+		if (b[len] == '1')
 		{
-			decimal = decimal + 1 << i;
+			decimal = decimal + (1 << i);
 		}
+		i++;
 	}
 	return (decimal);
 }
