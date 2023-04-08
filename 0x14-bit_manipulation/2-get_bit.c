@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -31,6 +32,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	if (index > len )
 	{
-		return (-1);
+		return (0);
 	}
 }
