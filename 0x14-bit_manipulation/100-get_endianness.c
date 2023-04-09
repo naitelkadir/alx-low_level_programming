@@ -2,13 +2,14 @@
 #include "main.h"
 
 /**
- * int get_endianness(void) - ...
+ * get_endianness - ...
  * Return: ...
  */
 int get_endianness(void)
 {
 	unsigned int n;
 	char *c = (char *)&n;
+
 	if (*c == 1)
 	{
 		return (1);
