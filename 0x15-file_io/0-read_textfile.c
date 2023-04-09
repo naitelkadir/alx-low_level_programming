@@ -20,13 +20,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	fp = open(filename, O_RDONLY);
+	fp = open(filename, O_RDONLY, 0600);
 	if (fp == -1)
 	{
 		return (0);
 	}
-	count = read(fd, b, letters);
+	count = read(fp, b, letters);
 	write(STDOUT-FILENO, b, count);
 	close(fp);
-	return( count);
+	return (count);
 }
