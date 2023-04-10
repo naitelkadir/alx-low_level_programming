@@ -21,26 +21,26 @@ int main(int argc,char *argv[])
 		dprinttf(STDERR_FILENO,"Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fd_to = open(av[2], O_TRUNC | O_CREAT | O_WRONLY);
+	fd_to = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
 		exit(99);
 	}
-	for (i = 0; i < 1024, i++)
+	while ((fd_read = read(fd_from, b, 1024) > 0)
 	{
-	fd_read = read(fd_from, b, 1024);
-	if (fd_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	fd_write = write(fd_to, b, fd_read);
-	if (fd_write == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
-		exit(99);
-	}
+		fd_read = read(fd_from, b, 1024);
+		if (fd_read == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
+		fd_write = write(fd_to, b, fd_read);
+		if (fd_write == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
+			exit(99);
+		}
 	}
 	if (close(fd_to) == -1)
 	{
