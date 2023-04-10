@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	b = malloc(sizeof(char) * letters);
 	if (b == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 	fp = open(filename, O_RDONLY);
 	if (fp == -1)
@@ -30,13 +30,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	count = read(fp, b, letters);
 	if (count == -1)
 	{
-		return (0);
+		return (-1);
 	}
-	fpwrite = write(STDOUT-FILENO, b, count);
+	fpwrite = write(STDOUT_FILENO, b, count);
 	if (fpwrite == -1)
 	{
-		return (0);
+		return (-1);
 	}
+	free(b);
 	close(fp);
 	return (count);
 }
