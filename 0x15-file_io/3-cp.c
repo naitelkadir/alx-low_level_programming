@@ -27,8 +27,7 @@ int main(int argc,char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
 		exit(99);
 	}
-	while ((fd_read = read(fd_from, b, 1024) > 0)
-	{
+	do {
 		fd_read = read(fd_from, b, 1024);
 		if (fd_read == -1)
 		{
@@ -41,7 +40,7 @@ int main(int argc,char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
 			exit(99);
 		}
-	}
+	} while (fd_read == 1024)
 	if (close(fd_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error:Can't close fd %d\n", fd_to);
