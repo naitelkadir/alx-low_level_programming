@@ -18,7 +18,7 @@ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 exit(97);
 }
 fd_from = open(argv[1], O_RDONLY);
-if (fd_from == -1)
+if (!argv || fd_from == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
