@@ -5,7 +5,7 @@
  *
  * Return: Always 0.
  */
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, fd_write, fd_read;
 	char b[1024];
