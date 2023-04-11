@@ -26,7 +26,7 @@ exit(98);
 fd_to = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
 while ((fd_read = read(fd_from, b, 1024)) > 0)
 {
-if (write(fd_to, b, fd_read) != fd_read)
+if (write(fd_to, b, fd_read) != fd_read || fd_to == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
