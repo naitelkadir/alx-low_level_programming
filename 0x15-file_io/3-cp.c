@@ -9,9 +9,9 @@
  */
 int main(int argc, char *argv[])
 {
-int fd_from, fd_to, fd_write, fd_read;
+int fd_from, fd_to, fd_read;
 char b[1024];
-	
+
 if (argc != 3)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -24,18 +24,13 @@ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 fd_to = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
-if (fd_to == -1)
+while ((fd_read = read(fd_from, b, 1024)) > 0)
+{
+if (write(fd_to, b, fd_read) != fd_read)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
-while ((fd_read = read(fd_from, b, 1024)) > 0)
-{
-if ((fd_write = write(fd_to, b, fd_read)) != fd_read)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99);
-}	
 }
 if (fd_read == -1)
 {
