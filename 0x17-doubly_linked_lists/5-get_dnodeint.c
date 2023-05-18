@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 
-/*
+/**
  * get_dnodeint_at_index - function that return the ndth node
  * @head: ...
  * @index: ...
